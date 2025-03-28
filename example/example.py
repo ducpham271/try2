@@ -63,13 +63,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-logo = Image.open("logo.png")
-col1a, col2a = st.columns([1, 4])  # Điều chỉnh tỷ lệ cột tùy ý
-with col1a:
-    st.image(logo, width=100)
-with col2a:
-    st.subheader("NỘI DUNG GHI ÂM GIỌNG NÓI")
-
+st.subheader("NỘI DUNG GHI ÂM GIỌNG NÓI")
 st.markdown("THÔNG TIN CÁ NHÂN:")
 
 col1, col2 = st.columns([1, 2])
