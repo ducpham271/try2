@@ -21,7 +21,8 @@ def save_ggdrive(audio, _name, _gender, _year_of_birth):
     utc_now = datetime.datetime.now().replace(tzinfo=pytz.utc)
     vietnam_now = utc_now.astimezone(vietnam_timezone)
     timestamp = vietnam_now.strftime("%Y%m%d_%H%M%S")  # Format: YYYYMMDD_HHMMSS
-    filename = f"0_{_name}_{_gender}_{_year_of_birth}_{timestamp}_a.wav"
+    __gender = _gender.replace("Nữ", "Nu")
+    filename = f"0_{_name}_{__gender}_{_year_of_birth}_{timestamp}_a.wav"
 
     audio.export(filename, format="wav")
     print(filename)
