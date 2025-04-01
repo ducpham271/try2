@@ -8,6 +8,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from PIL import Image
 import pytz
+import unicodedata
 
 service_account_info = json.loads(st.secrets["SERVICE_ACCOUNT_JSON"])
 creds = service_account.Credentials.from_service_account_info(service_account_info, scopes=['https://www.googleapis.com/auth/drive.file'])
@@ -21,7 +22,7 @@ def save_ggdrive(audio, _name, _gender, _year_of_birth):
     utc_now = datetime.datetime.now().replace(tzinfo=pytz.utc)
     vietnam_now = utc_now.astimezone(vietnam_timezone)
     timestamp = vietnam_now.strftime("%Y%m%d_%H%M%S")  # Format: YYYYMMDD_HHMMSS
-    __gender = _gender.replace("Nữ", "Nu")
+    __gender = unicodedata.normalize("NFC", _gender).replace("Nữ", "Nu")
     filename = f"0_{_name}_{__gender}_{_year_of_birth}_{timestamp}_a.wav"
 
     audio.export(filename, format="wav")
