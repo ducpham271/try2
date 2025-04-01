@@ -98,6 +98,4 @@ st.write("3. Phát âm nguyên âm “A” dài và lâu nhất có thể (lần
 audio3 = audiorecorder("Ghi âm", "Ngừng ghi âm", custom_style={"backgroundColor": "lightblue"}, key="ghiam3")
 if len(audio3) > 0:
     save_ggdrive(audio3, name, gender, year_of_birth)
-st.write("")
 st.markdown("---")
-st.write("")
