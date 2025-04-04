@@ -82,19 +82,32 @@ col1, col2 = st.columns([1, 2])
 with col1:
     st.write("Họ tên:")
 with col2:
-    name = st.text_input("Họ tên", key="name_input", label_visibility="collapsed")
+    name = st.text_input("name_input", key="name_input", label_visibility="collapsed")
 
 col7, col8 = st.columns([1, 2])
 with col7:
     st.write("Giới tính:")
 with col8:
-    gender = st.radio("Giới tính", ['Nam', 'Nữ'], label_visibility="collapsed")
+    gender = st.radio("gender_input", ['Nam', 'Nữ'], key="gender_input", label_visibility="collapsed")
 
 col3, col4 = st.columns([1, 2])
 with col3:
     st.write("Năm sinh:")
 with col4:
-    year_of_birth = st.number_input("Năm sinh", value=1960, min_value=1900, max_value=2025, step=1, key="yob", label_visibility="collapsed")
+    year_of_birth = st.number_input("yob_input", value=1960, min_value=1900, max_value=2025, step=1, key="yob_input", label_visibility="collapsed")
+
+# col5, col6 = st.columns([1, 2])
+# with col5:
+#     st.write("Bạn có bị các bệnh nào sau không?:")
+# with col6:
+#     # Define options
+#     options = ["Alzheimer’s Disease and Mild Cognitive Impairment", "Multiple Sclerosis and Rheumatoid Arthritis"]
+#     diseases = st.multiselect(
+#     "diseases_input", options, default=["Apples"], key="diseases_input", label_visibility="collapsed")
+#     diseases_string = ""
+#     if diseases:
+#         diseases_string = "_".join(diseases)
+        
 
 st.markdown("---")
 st.markdown("NỘI DUNG GHI ÂM:")
