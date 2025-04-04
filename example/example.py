@@ -47,27 +47,35 @@ st.markdown(
     """
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-    h1 {
-        font-size: 24px;  /* Adjust the size here */
-    }
-    [data-testid="stColumn"] {
-        padding: 0px !important;
-    }
-    label {
-        font-size: 14px; /* Reduced label font size */
-        margin-bottom: 2px; /* Reduced margin */
-    }
-    input, [data-baseweb="input"], [data-baseweb="input-container"] {
-        font-size: 14px; /* Reduced input font size */
-        padding: 4px; /* Reduced padding */
-        margin-bottom: 4px; /* Reduced margin */
-    }
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        .st-emotion-cache-1v0mbdj.e115fcil1 {display: none;}  /* Streamlit Cloud profile footer */
+        h1 {
+            font-size: 24px;  /* Adjust the size here */
+        }
+        [data-testid="stColumn"] {
+            padding: 0px !important;
+        }
+        label {
+            font-size: 14px; /* Reduced label font size */
+            margin-bottom: 2px; /* Reduced margin */
+        }
+        input, [data-baseweb="input"], [data-baseweb="input-container"] {
+            font-size: 14px; /* Reduced input font size */
+            padding: 4px; /* Reduced padding */
+            margin-bottom: 4px; /* Reduced margin */
+        }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-st.subheader("NỘI DUNG GHI ÂM GIỌNG NÓI")
+st.subheader("NỘI DUNG GHI ÂM GIỌNG NÓI ĐỐI VỚI NGƯỜI KHÔNG BỊ BỆNH PARKINSON")
+st.write("""
+         Mục đích của việc ghi âm này là để thực hiện 1 đồ án nghiên cứu: giọng nói của những người không bị bệnh Parkinson 
+         sẽ được đối chiếu với giọng nói của những người bệnh Parkinson, từ đó giúp phát hiện ra bệnh Parkinson từ giai đoạn sớm.
+         """)
 st.markdown("THÔNG TIN CÁ NHÂN:")
 
 col1, col2 = st.columns([1, 2])
@@ -90,15 +98,15 @@ with col4:
 
 st.markdown("---")
 st.markdown("NỘI DUNG GHI ÂM:")
-st.write("1. Phát âm nguyên âm “A” dài và lâu nhất có thể (lần 1)")
+st.write("1. Hít nhẹ và phát âm nguyên âm “A” thật to, dài và lâu nhất có thể, vd Aaaa..., chú ý không thêm dấu vào như Áááá... (lần 1)")
 audio1 = audiorecorder("Ghi âm", "Ngừng ghi âm", custom_style={"backgroundColor": "lightblue"}, key="ghiam1")
 if len(audio1) > 0:
     save_ggdrive(audio1, name, gender, year_of_birth)
-st.write("2. Phát âm nguyên âm “A” dài và lâu nhất có thể (lần 2)")
+st.write("2. Nghỉ 1 chút, hít nhẹ và phát âm nguyên âm “A” thật to, dài và lâu nhất có thể, vd Aaaa..., chú ý không thêm dấu vào như Áááá... (lần 2)")
 audio2 = audiorecorder("Ghi âm", "Ngừng ghi âm", custom_style={"backgroundColor": "lightblue"}, key="ghiam2")
 if len(audio2) > 0:
     save_ggdrive(audio2, name, gender, year_of_birth)
-st.write("3. Phát âm nguyên âm “A” dài và lâu nhất có thể (lần 3)")
+st.write("3. Nhỉ 1 chút nữa, hít nhẹ và phát âm nguyên âm “A” thật to, dài và lâu nhất có thể, vd Aaaa..., chú ý không thêm dấu vào như Áááá... (lần 3)")
 audio3 = audiorecorder("Ghi âm", "Ngừng ghi âm", custom_style={"backgroundColor": "lightblue"}, key="ghiam3")
 if len(audio3) > 0:
     save_ggdrive(audio3, name, gender, year_of_birth)
