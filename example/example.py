@@ -129,4 +129,4 @@ audio3 = audiorecorder("Ghi âm", "Ngừng ghi âm", custom_style={"backgroundCo
 if len(audio3) > 0:
     save_ggdrive(audio3, name, gender, year_of_birth)
 st.markdown("---")
-st.write("Lời cảm ơn: Xin cảm ơn ông/bà cô/chú anh/chị đã hỗ trợ em thực hiện đồ án này!")
+st.write("Lời cảm ơn: Xin cảm ơn ông/bà cô/chú anh/chị Cộng Đồng PARKINTON VIỆT NAM, đặc biệt là anh admin Tung Mix vì đã hỗ trợ em thực hiện đồ án này!")
