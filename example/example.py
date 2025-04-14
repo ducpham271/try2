@@ -72,9 +72,9 @@ st.markdown(
 )
 
 logo = Image.open("logo_new.png")
-col1a, col2a = st.columns([1, 4])  # Điều chỉnh tỷ lệ cột tùy ý
+col1a, col2a = st.columns([2, 4])  # Điều chỉnh tỷ lệ cột tùy ý
 with col1a:
-    st.image(logo, width=100)
+    st.image(logo, width=300)
 with col2a:
     st.subheader("NỘI DUNG GHI ÂM GIỌNG NÓI ĐỐI VỚI NGƯỜI KHÔNG BỊ BỆNH PARKINSON")
 st.write("""
@@ -137,3 +137,5 @@ if len(audio3) > 0:
     save_ggdrive(audio3, name, gender, year_of_birth)
 st.markdown("---")
 st.write("Lời cảm ơn: Xin cảm ơn ông/bà cô/chú anh/chị Cộng Đồng PARKINTON VIỆT NAM, đặc biệt là anh admin Tung Mix vì đã hỗ trợ em thực hiện đồ án này!")
+logo2 = Image.open("logo2.png")
+st.image(logo2)
