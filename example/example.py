@@ -71,7 +71,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.subheader("NỘI DUNG GHI ÂM GIỌNG NÓI ĐỐI VỚI NGƯỜI KHÔNG BỊ BỆNH PARKINSON")
+logo = Image.open("logo_new.png")
+col1a, col2a = st.columns([1, 4])  # Điều chỉnh tỷ lệ cột tùy ý
+with col1a:
+    st.image(logo, width=100)
+with col2a:
+    st.subheader("NỘI DUNG GHI ÂM GIỌNG NÓI ĐỐI VỚI NGƯỜI KHÔNG BỊ BỆNH PARKINSON")
 st.write("""
          Mục đích của việc ghi âm này là để thực hiện 1 đồ án nghiên cứu: giọng nói của những người không bị bệnh Parkinson 
          sẽ được đối chiếu với giọng nói của những người bệnh Parkinson, từ đó giúp phát hiện ra bệnh Parkinson từ giai đoạn sớm.
